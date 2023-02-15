@@ -49,5 +49,5 @@ func NewDatabaseError(op string, err error, msg string) error {
 }
 
 func (c *CustomError) Error() string {
-	return fmt.Sprintf("Operation:%s :LogMsg:%s :Msg:%s", c.Op, c.Err, c.Msg)
+	return fmt.Sprintf("Operation:%s :Log Message:%s :Message:%s", c.Op, c.Err, c.Msg)
 }
