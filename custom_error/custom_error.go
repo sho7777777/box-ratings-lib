@@ -12,6 +12,15 @@ type CustomError struct {
 	Msg  string
 }
 
+func NewBadRequestError(op string, err error, msg string) error {
+	return &CustomError{
+		Op:   op,
+		Code: http.StatusBadRequest,
+		Err:  err,
+		Msg:  msg,
+	}
+}
+
 func NewAuthenticationError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
