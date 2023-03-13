@@ -1,4 +1,5 @@
 package custom_error
 
-var MsgInternalServerError = `Internal Server Error.
-	Please contact the system administrator.`
+const MsgInternalServerError = `Internal Server Error. Please contact the system administrator.`
+
+const MsgNoDataFound = `Sorry, No data was found.`

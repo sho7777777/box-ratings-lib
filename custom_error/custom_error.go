@@ -12,6 +12,17 @@ type CustomError struct {
 	Msg  string
 }
 
+// 204
+func NewNoContentFoundError(op string, err error, msg string) error {
+	return &CustomError{
+		Op:   op,
+		Code: http.StatusNoContent,
+		Err:  err,
+		Msg:  msg,
+	}
+}
+
+// 400
 func NewBadRequestError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
@@ -21,6 +32,7 @@ func NewBadRequestError(op string, err error, msg string) error {
 	}
 }
 
+// 401
 func NewAuthenticationError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
@@ -30,6 +42,7 @@ func NewAuthenticationError(op string, err error, msg string) error {
 	}
 }
 
+// 403
 func NewAuthorizationError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
@@ -39,6 +52,7 @@ func NewAuthorizationError(op string, err error, msg string) error {
 	}
 }
 
+// 500
 func NewUnexpectedError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
@@ -48,6 +62,7 @@ func NewUnexpectedError(op string, err error, msg string) error {
 	}
 }
 
+// 500
 func NewDatabaseError(op string, err error, msg string) error {
 	return &CustomError{
 		Op:   op,
